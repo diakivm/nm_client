@@ -1,0 +1,37 @@
+@import "src/styles/Global";
+
+.table {
+  margin: 100px 130px;
+
+  &__container {
+    border-radius: $mainBR;
+
+  }
+
+  &__head {
+    background: $mainColor;
+  }
+
+  &__head-row {
+
+  }
+
+  &__head-cell {
+    color: white;
+    border-right: 1px white solid;
+  }
+
+  &__body{
+
+  }
+  &__body-row{
+
+  }
+  &__body-row {
+
+    background-color: black; /* or any other color you want */
+  }
+  &__body-call{
+
+  }
+}
