@@ -1,0 +1,15 @@
+@import "src/styles/Global";
+
+.header {
+  background-color: $mainColor;
+  padding: 15px 0;
+  &__logo {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 49px;
+    margin: 0;
+    color: #FFFFFF;
+  }
+}

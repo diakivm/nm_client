@@ -1,0 +1,34 @@
+@import "src/styles/Global";
+
+.footer {
+  background-color: #1C3B55;
+  padding: 14px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 29px;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  &__info {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 142%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0;
+  }
+}
