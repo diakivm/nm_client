@@ -1,11 +1,9 @@
 @import "src/styles/Global";
 
 .table {
-  margin: 100px 130px;
 
   &__container {
-    border-radius: $mainBR;
-
+    border-radius: $mainBR !important;
   }
 
   &__head {
@@ -17,7 +15,8 @@
   }
 
   &__head-cell {
-    color: white;
+    color: white !important;
+    white-space: nowrap;
     border-right: 1px white solid;
   }
 
@@ -26,12 +25,13 @@
   }
 
   &__body-row {
-
-    background-color: black; /* or any other color you want */
+    &:nth-of-type(even) {
+      background-color: #F1F1F1;
+    }
   }
 
   &__body-cell {
-
+    white-space: nowrap;
   }
 
   &__pagination {
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 0;
+    margin-top: 70px;
   }
 
 }

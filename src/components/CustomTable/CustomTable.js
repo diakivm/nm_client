@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 // Style
 import './index.scss'
@@ -12,7 +12,6 @@ import {
     TableRow,
     Table,
     TableContainer,
-    TextField,
     Stack,
     Pagination
 } from "@mui/material";
@@ -24,8 +23,6 @@ import {formatDate} from "../../helper/formateDate";
 
 const CustomTable = ({fetchData, filters}) => {
     const [data, setData] = useState([])
-    const inputTableRef = useRef()
-
     const [page, setPage] = useState(1)
     const [rowsPerPage, setRowsPerPage] = useState(10)
 
@@ -41,7 +38,7 @@ const CustomTable = ({fetchData, filters}) => {
                     }
                 }))
         })()
-    }, [page, rowsPerPage])
+    }, [page, rowsPerPage, filters])
 
     function handlePageChange(event, value) {
         setPage(value)
@@ -68,16 +65,16 @@ const CustomTable = ({fetchData, filters}) => {
                             !!data?.list?.length ?
                                 data.list.map((value) => {
                                     return (
-                                        <TableRow key={value._id} className="table__body_row">
-                                            <TableCell className="table__body_cell">{value?.blockNumber}</TableCell>
-                                            <TableCell className="table__body_cell">{value?._id}</TableCell>
-                                            <TableCell className="table__body_cell">{value?.from}</TableCell>
-                                            <TableCell className="table__body_cell">{value?.to}</TableCell>
-                                            <TableCell className="table__body_cell">{value?.confirmations}</TableCell>
+                                        <TableRow key={value._id} className="table__body-row">
+                                            <TableCell className="table__body-cell">{value?.blockNumber}</TableCell>
+                                            <TableCell className="table__body-cell">{value?._id}</TableCell>
+                                            <TableCell className="table__body-cell">{value?.from}</TableCell>
+                                            <TableCell className="table__body-cell">{value?.to}</TableCell>
+                                            <TableCell className="table__body-cell">{value?.confirmations}</TableCell>
                                             <TableCell
-                                                className="table__body_cell">{formatDate(value?.timestamp * 1000)}</TableCell>
-                                            <TableCell className="table__body_cell">{value?.value}</TableCell>
-                                            <TableCell className="table__body_cell">{value?.__v}</TableCell>
+                                                className="table__body-cell">{formatDate(value?.timestamp * 1000)}</TableCell>
+                                            <TableCell className="table__body-cell">{value?.value}</TableCell>
+                                            <TableCell className="table__body-cell">{value?.__v}</TableCell>
                                         </TableRow>
                                     )
                                 }) : ''

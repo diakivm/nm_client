@@ -1,14 +1,14 @@
 import * as React from 'react';
-import {Input} from "@mui/material";
+import {TextField} from "@mui/material";
 
-export default function CustomTextInput({value, setValue}) {
+export default function CustomTextInput({value, setValue, sx = {}}) {
     const handleChange = (e) => {
-        setValue(e.target.velue)
+        setValue(e.target.value)
     }
 
     return (
         <div>
-            <Input value={value} onChange={handleChange}/>
+            <TextField variant="outlined" value={value} onChange={handleChange} sx={sx}/>
         </div>
     );
 }

@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function CustomSelect({itemsToSelect, selected, setSelected}) {
+export default function CustomSelect({itemsToSelect, selected, setSelected, sx = {}}) {
     const handleChange = (event) => {
         const {target: {value}} = event;
         if (itemsToSelect?.length) {
@@ -14,11 +14,12 @@ export default function CustomSelect({itemsToSelect, selected, setSelected}) {
 
     return (
         <div>
-            <FormControl sx={{m: 1, width: 300, mt: 3}}>
+            <FormControl>
                 <Select
                     value={selected?.value}
                     onChange={handleChange}
                     input={<OutlinedInput/>}
+                    sx={sx}
                 >
                     {itemsToSelect?.length && itemsToSelect.map(({name, value}) => (
                         <MenuItem
