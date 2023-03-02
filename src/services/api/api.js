@@ -1,10 +1,13 @@
 import axios from "axios";
 
 export const getTransaction = async ({query}) => {
-    const transaction = await axios.get('https://nm-server.herokuapp.com/transactions', {
+    return await axios.get(`${process.env.REACT_APP_BASE_URL}/transactions`, {
         params: {
             ...query
         }
-    }).then(value => value.data)
-    return transaction
+    })
+        .then(value => value.data)
+        .catch(err => {
+            console.log(err)
+        })
 }
