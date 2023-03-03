@@ -24,7 +24,7 @@ import {formatDate} from "../../helper/formateDate";
 const CustomTable = ({fetchData, filters, pageList}) => {
         const [data, setData] = useState([])
         const [page, setPage] = useState(1)
-        const [rowsPerPage, setRowsPerPage] = useState(10)
+        const [rowsPerPage, setRowsPerPage] = useState(14)
 
 
         useEffect(() => {
@@ -55,6 +55,7 @@ const CustomTable = ({fetchData, filters, pageList}) => {
                                         return (
                                             <TableCell style={{
                                                 ...column,
+                                                ...column?.styles,
                                                 overflow: "hidden",
                                                 textOverflow: "ellipsis",
                                             }} className="table__head-cell">{column?.label}</TableCell>
@@ -74,6 +75,8 @@ const CustomTable = ({fetchData, filters, pageList}) => {
                                                         return (
                                                             <TableCell style={{
                                                                 ...column,
+                                                                ...column?.styles,
+                                                                padding: 0,
                                                                 overflow: "hidden",
                                                                 textOverflow: "ellipsis",
                                                             }} className="table__body-cell">{column?.formater ? column?.formater(value) : value[column?.field]}</TableCell>

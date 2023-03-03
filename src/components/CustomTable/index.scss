@@ -16,6 +16,7 @@
 
   &__head-cell {
     color: white !important;
+    padding: 4px 12px !important;
     border-right: 1px white solid;
   }
 
@@ -24,12 +25,17 @@
   }
 
   &__body-row {
+    &:nth-of-type(odd) {
+      background-color: #FBFBFB;
+    }
     &:nth-of-type(even) {
       background-color: #F1F1F1;
     }
   }
 
   &__body-cell {
+    border-right: 1px white solid;
+    padding: 6px 12px !important;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
