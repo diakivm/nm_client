@@ -10,6 +10,7 @@ export const TransactionsPageList = [
     },
     {
         label: 'Transaction ID',
+        field: 'hash',
         formater: (transaction) => {
             return <a href={`https://etherscan.io/tx/${transaction?.hash}`}>{transaction?.hash}</a>
         },
@@ -36,6 +37,8 @@ export const TransactionsPageList = [
     },
     {
         label: 'Date',
+        field: 'timestamp',
+        styles: {whiteSpace: 'nowrap'},
         formater: (transaction) => {
             return formatDate(transaction?.timestamp * 1000)
         },
@@ -45,13 +48,19 @@ export const TransactionsPageList = [
     {
         label: 'Value',
         field: 'value',
+        formater: (transaction) => {
+            return transaction?.value / 10**18
+        },
         width: 200,
         maxWidth: 200
     },
     {
         label: 'Transaction Fee',
-        field: '__v',
-        width: 100,
+        field: 'gas',
+        formater: (transaction) => {
+            return transaction?.gasPrice * transaction?.gasLimit / 10**18
+        },
+        width: 150,
         maxWidth: 150
     },
 ]
