@@ -28,7 +28,7 @@ function TransactionsPage() {
         }
 
         if (selectedFilter?.value && searchValue) {
-            setTableFilters({[selectedFilter.value]: searchValue})
+            setTableFilters({[selectedFilter.value]: searchValue?.trim()})
         }
     }
 
@@ -40,8 +40,8 @@ function TransactionsPage() {
                         <CustomTextInput
                             value={searchValue}
                             setValue={setSearchValue}
+                            className='filters-inputs__text-input'
                             sx={{
-                                width: 250,
                                 "& fieldset": {border: 'none'},
                             }}/>
                         <div className='transactions__filters-separator'/>
@@ -49,8 +49,8 @@ function TransactionsPage() {
                             itemsToSelect={tableFiltersToSelect}
                             selected={selectedFilter}
                             setSelected={setSelectedFilter}
+                            className='filters-inputs__select-input'
                             sx={{
-                                width: 180,
                                 "& fieldset": {border: 'none'},
                             }}/>
                     </div>

@@ -58,7 +58,7 @@ export const TransactionsPageList = [
         label: 'Transaction Fee',
         field: 'gas',
         formater: (transaction) => {
-            return transaction?.gasPrice * transaction?.gasLimit / 10**18
+            return transaction?.gasPrice * transaction?.gas / 10**18
         },
         width: 150,
         maxWidth: 150

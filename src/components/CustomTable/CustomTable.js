@@ -85,7 +85,7 @@ const CustomTable = ({fetchData, filters, pageList}) => {
                 <div className="table__pagination">
                     <div className="table__pagination_blocks">
                         <Stack spacing={2}>
-                            <Pagination count={data?.totalPages} onChange={handlePageChange} shape="rounded"
+                            <Pagination count={data?.totalPages} onChange={handlePageChange} shape="rounded" siblingCount={0}
                                         variant="rounded" size='large'/>
                         </Stack>
                     </div>
