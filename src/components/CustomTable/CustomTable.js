@@ -1,9 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
-// Style
-import './index.scss'
-
-//MUI
 import {
     Paper,
     TableBody,
@@ -16,10 +11,7 @@ import {
     Pagination
 } from "@mui/material";
 
-// API
-
-//Helper
-import {formatDate} from "../../helper/formateDate";
+import './index.scss'
 
 const CustomTable = ({fetchData, filters, pageList}) => {
         const [data, setData] = useState([])
