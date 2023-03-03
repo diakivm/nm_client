@@ -6,6 +6,7 @@ import CustomTable from "../../components/CustomTable/CustomTable";
 import {getTransaction} from "../../services/api/api";
 import {Button} from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
+import {TransactionsPageList} from "./TransactionsPageList";
 
 const tableFiltersToSelect = [
     {name: 'Sender address', value: 'fromAddress'},
@@ -55,7 +56,7 @@ function TransactionsPage() {
                     </div>
                     <Button className='transactions__filters-button' variant="contained" onClick={handleSubmitButton}><SearchIcon/></Button>
                 </div>
-                <CustomTable fetchData={getTransaction} filters={tableFilters}/>
+                <CustomTable fetchData={getTransaction} filters={tableFilters} pageList={TransactionsPageList}/>
             </div>
         </div>
     );

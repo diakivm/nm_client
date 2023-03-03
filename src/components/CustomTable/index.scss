@@ -16,7 +16,6 @@
 
   &__head-cell {
     color: white !important;
-    white-space: nowrap;
     border-right: 1px white solid;
   }
 
@@ -31,7 +30,10 @@
   }
 
   &__body-cell {
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
   }
 
   &__pagination {
@@ -40,6 +42,18 @@
     justify-content: center;
     align-items: center;
     margin-top: 70px;
-  }
 
+    ul {
+      .Mui-selected {
+        background-color: $mainColor;
+        color: white;
+      }
+      .MuiPaginationItem-page {
+        width: 48px;
+        height: 48px;
+        border: 2px solid #F1F1F1;
+        border-radius: 8px;
+      }
+    }
+  }
 }
